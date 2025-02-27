@@ -1,0 +1,18 @@
+.socials
+  display: block
+  position: relative
+  line-height: 1
+  li
+    display: inline-block
+    a
+      display: block
+      font-size: 1.6rem
+      line-height: 1
+      color: $light-color
+      margin-right: 2.7rem
+      transition: color .3s ease-in-out
+      .no-touch &:hover
+        color: shade($light-color, 30%)
+    &:last-of-type
+      a
+        margin-right: 0

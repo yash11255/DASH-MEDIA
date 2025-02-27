@@ -1,0 +1,83 @@
+.section-main
+  .headline__subtitle,
+  .headline__title
+    opacity: 0
+    transform: translateZ(0)
+    transform: translateY(-50px)
+    transition: opacity $animation-delay, transform $animation-delay
+
+  .headline__description,
+  .headline__btnholder
+    opacity: 0
+    transform: translateZ(0)
+    transform: translateY(50px)
+    transition: opacity $animation-delay, transform $animation-delay
+
+  .intro__header
+    .logo,
+    .menu-trigger
+      opacity: 0
+      transition: opacity 1s
+
+  .intro__countdown
+    opacity: 0
+    transition: opacity 1s
+
+  .intro__copyright
+    opacity: 0
+    transition: opacity 1s
+
+  .aside__content
+    opacity: 0
+    transition: opacity 1s ease-in-out
+    &.animate-out
+      opacity: 0
+      transition: opacity .5s ease-in-out
+
+  .aside__socials
+    opacity: 0
+    transition: opacity 1s
+
+  &.loaded
+    .headline__subtitle,
+    .headline__title,
+    .headline__description,
+    .headline__btnholder
+      opacity: 1
+      transform: translateY(0)
+    .headline__subtitle
+      transition: transform .6s 0s , opacity .6s 0s
+    .headline__title
+      transition: transform .6s 0s , opacity .6s 0s
+    .headline__description
+      transition: transform .6s 0s , opacity .6s 0s
+    .headline__btnholder
+      transition: transform .6s 0s , opacity .6s 0s, background-color .3s, color .3s
+
+    .intro__header
+      .logo,
+      .menu-trigger
+        opacity: 1
+
+    .intro__countdown
+      opacity: 1
+
+    .intro__copyright
+      opacity: 1
+
+    .aside__content
+      opacity: 1
+      &.animate-out
+        opacity: 0
+        transition: opacity .5s ease-in-out
+
+    .aside__socials
+      opacity: 1
+
+  +MQ(XL)
+    .menu
+      opacity: 0
+      transition: opacity 1s
+    &.loaded
+      .menu
+        opacity: 1

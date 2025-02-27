@@ -1,0 +1,949 @@
+/*! ------------------------------------------------
+   Project Name: Axio Coming Soon Template
+   Project Description: Axio - awesome coming soon template to kick-start your project
+   Tags: mix_design, axio, coming soon, under construction, template, coming soon page, html5, css3
+   Version: 4.0.2
+   Build Date: April 2017
+   Last Update: December 2024
+   This product is available exclusively on Themeforest
+   Author: mix_design
+   Author URI: https://themeforest.net/user/mix_design
+   File name: main-demo.css
+   ------------------------------------------------
+
+   ------------------------------------------------
+   Table of Contents
+   ------------------------------------------------
+    1. Loader Styles
+    2. Loading Animation
+    3. Fonts
+    4. Base CSS Styles
+    5. Typography Styles
+    6. Buttons & Triggers Styles
+    7. Intro Styles
+    8. Preview Sections Styles
+    9. Headline Styles
+    10. Preview Links Styles
+    11. Subscribe Section Styles
+    12. Footer Styles
+   ------------------------------------------------
+   Table of Contents End
+   ------------------------------------------------ */
+
+// Import Bourbon
+@import "bourbon"
+
+// Import Libs, Mixins and Variables
+@import "partials/layout"
+@import "partials/mixins"
+@import "partials/variables"
+
+// Demo Mixins and Variables
+
+// Main Colors
+$accent-color: #ADD322
+$base-color: #FF8F00
+
+// Colors
+$black: #121212
+$white: #ffffff
+// Red for tags
+$red: #ea074e
+
+// 4.0 update
+$titanite: #add322
+$springcrocus: #FF8F00
+$electricblue: #0055aa
+$blazingyellow: #fee715
+$vivamagenta: #bb2649
+$pinkcosmos: #f07ba5
+
+// Text Colors
+// Dark text
+$text-dark-bright: #070707
+$text-dark-medium: #444
+$text-dark-mute: tint(#969696, 40%)
+// Lidht text
+$text-light-bright: #ffffff
+$text-light: rgba(255,255,255,.8)
+$text-light-medium: rgba(255,255,255,.6)
+$text-light-mute: rgba(255,255,255,.4)
+
+// Backgrounds
+=bg-light
+  background-color: $white
+=bg-medium
+  background-color: #1c1c1c
+=bg-dark
+  background-color: #0b0b0b
+
+// Cover layers
+=cover-medium
+  background-color: rgba(shade($base-color, 80%),.6)
+=cover-dark
+  background-color: rgba(shade($base-color, 80%),.8)
+=cover-medium-gradient
+  background: linear-gradient(135deg, rgba(shade($base-color, 80%),0.8) 0%,rgba(shade($base-color, 80%),0.8) 20%,rgba(shade($base-color, 80%),0) 100%)
+
+// Main pattern
+=background-pattern
+  background-image: url('../img/patterns/pattern-color-1.svg')
+  background-repeat: repeat
+  background-position: top left
+  .no-svg &
+    background:
+      image: url('../img/patterns/pattern-color-1.png')
+
+/* ------------------------------------------------*/
+/* Loader Styles Start
+/* ------------------------------------------------*/
+.loader
+  +position(fixed, 0 0 0 0)
+  z-index: 1000
+  background-color: $base-color
+  opacity: 1
+  visibility: visible
+  transition: visibility .4s .0s, opacity .4s, background-color .6s ease-in-out
+  &.fade-dark
+    background-color: shade($base-color, 60%)
+  &.loaded
+    opacity: 0
+    visibility: hidden
+
+.loader__content
+  position: absolute
+  +center
+
+.loader__logo
+  display: block
+  width: 6rem
+  height: 6rem
+  margin: 0 auto 24px
+  img
+    display: block
+    width: 100%
+    height: auto
+
+.loader__caption
+  margin: 0 auto
+  text-align: center
+  .loading-text
+    display: block
+    color: rgba(255,255,255,.6)
+    text-transform: uppercase
+    font-family: Arial, Helvetica, sans-serif
+    font-size: 1.4rem
+    letter-spacing: .2rem
+  .loading-dots
+    position: relative
+    display: inline-block
+    text-align: center
+    +clearfix
+    .dot
+      float: left
+      width: .6rem
+      height: .6rem
+      margin: 0 0.3rem
+      background: #FFFFFF
+      opacity: 0
+      border-radius: 50%
+      animation: fade 1s infinite
+      &:nth-of-type(1)
+        animation-delay: 0s
+      &:nth-of-type(2)
+        animation-delay: .1s
+      &:nth-of-type(3)
+        animation-delay: .2s
+
+@keyframes fade
+  0%
+    opacity: 0
+  50%
+    opacity: 0.8
+  100%
+    opacity: 0
+
+@keyframes slideInDown
+  from
+    transform: translate3d(0, -100%, 0)
+    opacity: 0
+    visibility: visible
+  to
+    opacity: 1
+    transform: translate3d(0, 0, 0)
+
+.slideInDown
+  animation-iteration-count: 1
+  animation-name: slideInDown
+  animation-duration: 1s
+  animation-fill-mode: both
+
+@keyframes slideInUp
+  from
+    transform: translate3d(0, 100%, 0)
+    opacity: 0
+    visibility: visible
+  to
+    opacity: 1
+    transform: translate3d(0, 0, 0)
+
+.slideInUp
+  animation-name: slideInUp
+  animation-iteration-count: 1
+  animation-duration: 1s
+  animation-fill-mode: both
+
+@keyframes flipOutY
+  from
+    transform: perspective(400px)
+  to
+    transform: perspective(400px) rotate3d(0, 1, 0, 90deg)
+    opacity: 0
+
+.flipOutY
+  backface-visibility: visible
+  animation-name: flipOutY
+  animation-duration: 1s
+  animation-fill-mode: both
+
+@keyframes fadeOutDown
+  from
+    opacity: 1
+  to
+    opacity: 0
+    transform: translate3d(0, 100%, 0)
+
+.fadeOutDown
+  animation: fadeOutDown 1s 1
+  animation-fill-mode: both
+/* ------------------------------------------------*/
+/* Loader Styles End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Loading Animation Styles Start
+/* ------------------------------------------------*/
+/* ------------------------------------------------*/
+/* Loading Animation Styles End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Fonts Start
+/* ------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap')
+/* ------------------------------------------------*/
+/* Fonts End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Base CSS Styles Start
+/* ------------------------------------------------*/
+*, *::before, *::after
+  box-sizing: border-box
+
+button:active, button:focus
+  outline: none !important
+
+button::-moz-focus-inner
+  border: 0 !important
+
+input::-moz-focus-inner
+  border: 0 !important
+
+::selection
+  background-color: $accent-color
+  color: $text-dark-bright
+  text-shadow: none
+
+::-webkit-scrollbar
+  display: none
+  width: 6px
+  background: shade($base-color, 16%)
+  +MQ(M)
+    display: block
+
+::-webkit-scrollbar-track
+  border-radius: 20px
+  background-color: shade($base-color, 16%)
+
+::-webkit-scrollbar-thumb
+  border-radius: 10px
+  background-color: $accent-color
+
+html
+  font-family: sans-serif
+  font-size: 62.5%
+  +font-smoothing
+
+html,
+body
+  width: 100%
+  height: 100%
+
+body
+  position: relative
+  min-width: 320px
+  overflow-x: hidden !important
+  font: normal 400 1.4rem/1.7 $default-font
+  color: $text-dark-medium
+  background-color: $white
+
+section
+  position: relative
+  min-width: 320px
+
+a
+  text-decoration: none
+  outline: none
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+  color: $text-dark-bright
+  &.light
+    color: $text-light-bright
+  .no-touch &:hover
+    color: tint($accent-color, 40%)
+    &.light
+      color: tint($accent-color, 40%)
+
+a:hover,
+a:active,
+a:focus
+  outline: 0
+
+img
+  display: block
+  width: 100%
+  height: auto
+
+.overflow-hidden
+  overflow: hidden !important
+
+.fullheight
+  position: static
+  height: auto
+  +MQ(XL)
+    position: relative
+    height: 100%
+
+.fullheight-mobile
+  position: relative
+  height: 100%
+
+.color-layer
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+
+.color-layer-mobile
+  display: block
+  +MQ(XL)
+    display: none
+
+.color-layer-medium
+  +cover-medium
+
+.color-layer-dark
+  +cover-dark
+
+.color-layer-medium-gradient
+  +cover-medium-gradient
+
+.bg-light
+  +bg-light
+.bg-medium
+  +bg-medium
+.bg-dark
+  +bg-dark
+/* ------------------------------------------------*/
+/* Base CSS Styles End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Typography Styles Start
+/* ------------------------------------------------*/
+h1
+  font: italic 400 2.6rem/1.2 $default-font
+  color: $text-light-bright
+  margin-bottom: 2.6rem
+  +MQ(M)
+    margin-bottom: 2.6rem
+    font-size: 3.8rem
+  +MQ(XXL)
+    margin-bottom: 2.6rem
+    font-size: 5.2rem
+
+.headline
+  p
+    font: normal 300 1.4rem/1.6 $default-font
+    color: $text-light-bright
+    margin-bottom: 3.5rem
+    a
+      color: $accent-color
+      transition: color .3s
+      .no-touch &:hover
+        color: tint($accent-color, 60%)
+  +MQ(M)
+    p
+      font-size: 1.6rem
+      max-width: 600px
+      margin-bottom: 3.7rem
+  +MQ(XL)
+    p
+      max-width: 460px
+  +MQ(XXL)
+    p
+      max-width: 520px
+      margin-bottom: 3.9rem
+      font-size: 1.8rem
+
+.headline__title
+  //font: italic 500 2.4rem/1.2 $default-font
+  font: normal 700 2.4rem/1.2 $default-font
+  color: $text-light-bright
+  +MQ(M)
+    font-size: 3.4rem
+  +MQ(XXL)
+    font-size: 4.2rem
+
+.headline__subtitle
+  font: normal 400 1.4rem/1.6 $default-font
+  color: $text-light-bright
+  margin: 1.8rem auto 2.6rem
+  max-width: 460px
+  a
+    color: $accent-color
+    .no-touch &:hover
+      color: $text-light-bright
+  +MQ(M)
+    font-size: 1.6rem
+    margin: 1.8rem auto 2.8rem
+
+.headline__colors
+  margin: 0 auto
+  & > div
+    display: inline-block
+    width: 50px
+    height: 50px
+    border-radius: 50%
+    &.colors__accent
+      margin-right: -25px
+  +MQ(M)
+    & > div
+      width: 76px
+      height: 76px
+      &.colors__accent
+        margin-right: -38px
+
+.titanite
+  background-color: $titanite
+.springcrocus
+  background-color: $springcrocus
+.electricblue
+  background-color: $electricblue
+.blazingyellow
+  background-color: $blazingyellow
+.vivamagenta
+  background-color: $vivamagenta
+.pinkcosmos
+  background-color: $pinkcosmos
+
+figure
+  text-align: center
+  figcaption
+    p
+      display: block
+      font: italic 500 1.4rem/1.1 $default-font
+      color: $text-light-medium
+      margin-top: 1.4rem
+      +MQ(M)
+        font-size: 1.6rem
+      +MQ(XXL)
+        //font-size: 1.8rem
+        margin-top: 2rem
+
+.footer
+  p
+    font: normal 700 1.8rem/1.6 $default-font
+    color: $text-light-bright
+    i
+      color: $accent-color
+  +MQ(XXL)
+    p
+      font-size: 2.2rem
+/* ------------------------------------------------*/
+/* Typography Styles End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Buttons & Triggers Styles Start
+/* ------------------------------------------------*/
+.btn
+  position: relative
+  display: inline-block
+  border: none
+  outline: none
+  background-color: transparent
+  padding: 1.2rem 1.9rem
+  font: normal 700 1.4rem/1.7 $default-font
+  color: $light-color
+  text-align: center
+  border-radius: 4px
+  margin-right: 1rem
+  cursor: pointer
+  user-select: none
+  transition: all .3s ease-in-out
+  &:last-of-type
+    margin-right: 0
+  +MQ(S)
+    display: inline-block
+    padding: 1.2rem 3.2rem
+    margin-bottom: 0
+    margin-right: 1.6rem
+    &:last-of-type
+      margin-right: 0
+  +MQ(M)
+    padding: 1.4rem 3.2rem
+  +MQ(XXL)
+    padding: 1.6rem 3.8rem
+    font-size: 1.4rem
+
+.btn-solid-light
+  background-color: $accent-color
+  border: 2px solid $accent-color
+  color: $text-dark-bright
+  .no-touch &:hover
+    background-color: transparent
+    color: $text-light-bright
+    border: 2px solid $white
+
+.btn-solid-dark
+  background-color: $base-color
+  border: 2px solid $base-color
+  color: $text-light-bright
+  .no-touch &:hover
+    background-color: transparent
+    border: 2px solid $base-color
+    color: $text-dark-bright
+
+.btn-outline-light
+  background-color: transparent
+  color: $text-light-bright
+  border: 2px solid $white
+  .no-touch &:hover
+    background-color: $accent-color
+    border: 2px solid $accent-color
+    color: $text-dark-bright
+
+.btn-outline-dark
+  background-color: transparent
+  border: 2px solid $text-dark-bright
+  color: $text-dark-bright
+  .no-touch &:hover
+    background-color: $base-color
+    border: 2px solid $base-color
+    color: $text-light-bright
+
+.to-top
+  display: inline-block
+  width: 46px
+  height: 46px
+  line-height: 46px
+  border-radius: 4px
+  +position(fixed, null 20px 20px null)
+  background-color: $base-color
+  overflow: hidden
+  z-index: 3
+  color: $text-light-bright
+  font-size: 1.8rem
+  text-align: center
+  visibility: hidden
+  opacity: 0
+  transition: opacity $animation-delay 0s, visibility 0s $animation-delay
+  &.is-visible, &.fade-out
+    transition: opacity $animation-delay 0s, visibility 0s 0s
+  .no-touch &
+    &:hover
+      transition: opacity $animation-delay 0s, visibility 0s 0s
+      opacity: 1
+      color: $text-light-bright
+  &.is-visible
+    visibility: visible
+    opacity: 1
+  &.fade-out
+    opacity: 0.4
+  +MQ(M)
+    +position(fixed, null 20px 20px null)
+/* ------------------------------------------------*/
+/* Buttons & Triggers Styles End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Intro Styles Start
+/* ------------------------------------------------*/
+.intro
+  position: relative
+  min-height: 640px
+  background-color: #0b0b0b
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: bottom right
+  background-image: url("../img/demo/1920x1080-bg-demo.webp")
+  +MQ(XL)
+    background-attachment: fixed
+
+.intro__header
+  +position(absolute, 3rem null null 0)
+  width: 100%
+  padding: 0 calc(10% - 15px)
+  .logo
+    img
+      width: 180px
+  +MQ(M)
+    .logo
+      img
+        width: 200px
+  +MQ(XL)
+    padding: 0 85px
+  +MQ(XXL)
+    .logo
+      img
+        width: auto
+    +position(absolute, 6rem null null 0)
+    padding: 0 105px
+
+.intro__content
+  position: absolute
+  left: 0
+  +center(y)
+  width: 100%
+  .headline
+    padding: 0 calc(10% - 15px)
+  +MQ(XL)
+    .headline
+      padding: 0 85px
+  +MQ(XXL)
+    .headline
+      padding: 0 105px
+
+.intro__scroll
+  +position(absolute, null null 3rem 10%)
+  display: block
+  width: 31px
+  height: 54px
+  border-radius: 15px
+  border: 2px solid $white
+  span
+    display: block
+    +position(absolute, 12px null null -2px)
+    width: 31px
+    height: 26px
+    overflow: hidden
+    &::before
+      content: ""
+      display: block
+      +position(absolute, 0 null null 14px)
+      width: 3px
+      height: 14px
+      border-radius: 2px
+      background-color: $white
+      animation: scroll 1.4s infinite
+  +MQ(XL)
+    +position(absolute, null null 3rem 100px)
+  +MQ(XXL)
+    +position(absolute, null null 6rem 120px)
+
+@keyframes scroll
+  0%
+    transform: translate3d(0, 0, 0)
+  60%
+    transform: translate3d(0, 40px, 0)
+  61%
+    transform: translate3d(0, -40px, 0)
+  85%
+    transform: translate3d(0, 0, 0)
+/* ------------------------------------------------*/
+/* Intro Styles End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Preview Sections Styles Start
+/* ------------------------------------------------*/
+.demo
+  padding-bottom: 4rem
+  //background-color: #f9f9f9
+  &.first-section
+    padding-top: 8rem
+  +MQ(M)
+    padding-bottom: 5rem
+    &.first-section
+      padding-top: 9rem
+  +MQ(XXL)
+    padding-bottom: 6rem
+    &.first-section
+      padding-top: 12rem
+/* ------------------------------------------------*/
+/* Preview Sections Styles End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Headline Styles Start
+/* ------------------------------------------------*/
+.demo__headline
+  position: relative
+  width: 100%
+  padding: 0 calc(10% - 15px)
+  margin-bottom: 4rem
+  text-align: center
+  +MQ(M)
+    margin-bottom: 5rem
+  +MQ(XL)
+    padding: 0 8.5rem
+  +MQ(XXL)
+    padding: 0 10.5rem
+    margin-bottom: 7rem
+/* ------------------------------------------------*/
+/* Headline Styles End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Preview Links Styles Start
+/* ------------------------------------------------*/
+.demo__links
+  position: relative
+  width: 100%
+  padding: 0 calc(10% - 15px)
+  +MQ(XL)
+    padding: 0 8.5rem
+  +MQ(XXL)
+    padding: 0 10.5rem
+
+.links__item
+  display: block
+  position: relative
+  margin-bottom: 4rem
+  a
+    display: block
+    .no-touch &:hover
+      .links__image
+        transform: translateY(-1.4rem)
+        box-shadow: 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12), 0 8px 10px -7px rgba(0,0,0,0.2)
+      .new-item
+        &::before
+          top: -14px
+          box-shadow: 0 8px 17px 2px rgba(0,0,0,0.1), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.14)
+  +MQ(M)
+    margin-bottom: 5rem
+  +MQ(XXL)
+    margin-bottom: 6rem
+
+.new-item
+  &::before
+    content: 'NEW'
+    +position(absolute, -10px -10px null null)
+    width: 46px
+    height: 46px
+    border-radius: 50%
+    background-color: $red
+    color: $text-light-bright
+    font: normal 600 1.1rem/46px $default-font
+    letter-spacing: 0.06rem
+    text-transform: uppercase
+    text-align: center
+    z-index: 12
+    transition: all .3s ease-in-out
+
+.links__image
+  position: relative
+  width: 100%
+  box-shadow: 0 8px 17px 2px rgba(0,0,0,0.06), 0 3px 14px 2px rgba(0,0,0,0.08), 0 5px 5px -3px rgba(0,0,0,0.1)
+  transform: translateY(0)
+  transition: all .3s ease-in-out
+/* ------------------------------------------------*/
+/* Preview Links Styles End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Subscribe Section Styles Start
+/* ------------------------------------------------*/
+.subscribe
+  position: relative
+  min-width: 320px
+  padding: 8rem 0
+  background-color: shade($base-color, 20%)
+  background-repeat: no-repeat
+  background-position: center
+  background-size: cover
+  background-image: url('../img/demo/bg-demo-subscribe.webp')
+  +MQ(M)
+    padding: 10rem 0
+  +MQ(XL)
+    background-attachment: fixed
+  +MQ(XXL)
+    padding: 14rem 0
+
+.subscribe__container
+  position: relative
+  width: 100%
+  padding: 0 calc(10% - 15px)
+  +MQ(XL)
+    padding: 0 8.5rem
+  +MQ(XXL)
+    padding: 0 10.5rem
+
+.subscribe__content
+  //max-width: 340px
+  +MQ(XL)
+  max-width: 440px
+  +MQ(XXL)
+    max-width: 600px
+
+.subscribe__title
+  margin-bottom: 3.8rem
+  .title
+    font: normal 700 2.4rem/1.2 $default-font
+    color: $text-light-bright
+    margin-bottom: 2rem
+  .subtitle
+    font: normal 300 1.4rem/1.7 $default-font
+    color: $text-light-bright
+  +MQ(M)
+    .title
+      font-size: 3.4rem
+    .subtitle
+      font-size: 1.6rem
+  +MQ(XXL)
+    .title
+      font-size: 4.8rem
+
+.form-container
+  position: relative
+
+.form
+  opacity: 1
+  transition: opacity .5s ease-in-out
+  &.is-hidden
+    opacity: 0
+
+form
+  position: relative
+  width: 100%
+
+  input, textarea
+    position: relative
+    display: block
+    width: 100%
+    border: none
+    outline: none
+    margin: 0
+    padding: 0
+    background-color: transparent
+    padding: 1.4rem .3rem
+    font: normal 500 1.6rem/1.7 $default-font
+    transition: border-bottom .3s
+
+  input
+    height: 4.4rem
+    margin: 0 0 2.4rem 0
+    &.margin-s
+      margin: 0 0 .8rem 0
+    +MQ(XXL)
+      height: 5rem
+
+  textarea
+    height: 14rem
+    resize: none
+    margin: 0 0 .8rem 0
+
+  .inputs-description
+    display: block
+    width: 100%
+    margin-bottom: 1.2rem
+    text-align: right
+    font: normal 400 1.2rem/1 $default-font
+
+.form-light
+  ::-webkit-input-placeholder
+    color: $text-light
+    font-weight: 400
+
+  :-moz-placeholder
+    color: $text-light
+    font-weight: 400
+
+  ::-moz-placeholder
+    color: $text-light
+    font-weight: 400
+
+  :-ms-input-placeholder
+    color: $text-light
+    font-weight: 400
+
+  input:focus:required:invalid,
+  textarea:focus:required:invalid
+    color: $text-light-bright
+  input:required:valid,
+  textarea:required:valid
+    color: $text-light-bright
+
+  input, textarea
+    border-bottom: 1px solid $text-light-bright
+    color: $text-light-bright
+    &:focus
+      border-bottom: 1px solid $accent-color
+
+  .inputs-description
+    color: $text-light-medium
+
+.reply-group
+  +position(absolute, 0 null null 0)
+  width: 100%
+  padding: .6rem 0
+  opacity: 0
+  transition: opacity .5s ease-in-out
+  &.is-visible
+    opacity: 1
+
+.reply-group__icon
+  display: block
+  margin: 0 auto 13px
+  font-size: 4rem
+  color: $base-color
+  &.light
+    color: $accent-color
+
+.reply-group__title
+  font: normal 700 2rem/1.7 $default-font
+  margin-bottom: 7px
+  color: $text-dark-bright
+  &.light
+    color: $text-light-bright
+
+.reply-group__text
+  display: block
+  font: normal 400 1.4rem/1.7 $default-font
+  color: $text-dark-medium
+  &.light
+    color: $text-light
+  +MQ(XXL)
+    font-size: 1.6rem
+/* ------------------------------------------------*/
+/* Subscribe Section Styles End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Footer Styles Start
+/* ------------------------------------------------*/
+.footer
+  background-color: $base-color
+  //+background-pattern
+  position: relative
+  padding: 4rem calc(10% - 15px)
+  text-align: center
+  +MQ(XL)
+    padding: 4.8rem 8.5rem
+  +MQ(XXL)
+    padding: 6rem 10.5rem
+/* ------------------------------------------------*/
+/* Footer Styles End
+/* ------------------------------------------------*/

@@ -1,0 +1,75 @@
+.notify
+  +position(fixed, 0 0 null null)
+  width: 100%
+  height: 100%
+  overflow-y: auto
+  z-index: 4
+  background-color: shade($dark-color, 40%)
+  transform: translateX(101%)
+  transition: transform .3s
+  .transition-el
+    opacity: 0
+    transform: translateY(50px)
+    transition: opacity .3s, transform .3s
+  +MQ(XL)
+    +position(absolute, 0 auto null 0)
+    width: 75%
+    min-height: 568px
+  &.is-visible
+    transform: translateX(0)
+    .transition-el
+      opacity: 1
+      transform: translateY(0)
+    .transition-el-1
+      transition: transform .3s $animation-duration - .2s , opacity .3s $animation-duration - .2s
+    .transition-el-2
+      transition: transform .3s $animation-duration - .1s , opacity .3s $animation-duration - .1s
+    .transition-el-3
+      transition: transform .3s $animation-duration, opacity .3s $animation-duration, border .5s
+    .transition-el-4
+      transition: transform .3s $animation-duration + .1s, opacity .3s $animation-duration + .1s, background-color .3s, border .3s, color .3s
+
+.notify__controls
+  position: relative
+  margin-top: 3rem
+  padding: 0 3rem
+  +MQ(M)
+    padding: 0 5rem
+  +MQ(XXL)
+    margin-top: 4rem
+    padding: 0 6rem
+
+.notify__content
+  position: relative
+  padding: 6rem 0
+  max-width: 700px
+  .content-block
+    position: relative
+    padding: 0 3rem
+    margin-bottom: 6rem
+    &:last-of-type
+      margin-bottom: 0
+    &.margin-bottom-s
+      margin-bottom: 3.8rem
+    &.grid-block
+      padding: 0 calc(3rem - 15px)
+  +MQ(M)
+    .content-block
+      padding: 0 5rem
+      &.grid-block
+        padding: 0 calc(5rem - 15px)
+  +MQ(XL)
+    position: absolute
+    left: 0
+    +center(y)
+  +MQ(XXL)
+    padding: 6rem 0
+    &.no-padding-bottom
+      padding: 6rem 0 0 0
+    .content-block
+      padding: 0 6rem
+      margin-bottom: 7rem
+      &.margin-bottom-s
+        margin-bottom: 4.8rem
+      &.grid-block
+        padding: 0 calc(6rem - 15px)

@@ -1,0 +1,90 @@
+.stayintouch
+  +position(fixed, 0 null null 0)
+  width: 100%
+  height: 100%
+  overflow-y: auto
+  z-index: 11
+  background-color: $dark-color
+  opacity: 1
+  transform: translateZ(0)
+  transform: translateX(100%) translateY(0)
+  transition: opacity .3s, transform .3s
+  .transition-el
+    opacity: 0
+    transform: translateY(50px)
+    transition: opacity .3s, transform .3s
+  .opacity-el
+    opacity: 0
+    transition: opacity .3s
+  &.animate-in
+    transform: translateX(0) translateY(0)
+    .transition-el
+      opacity: 1
+      transform: translateY(0)
+    .opacity-el
+      opacity: 1
+    .transition-el-1
+      transition: transform .3s $animation-duration - .2s , opacity .3s $animation-duration - .2s
+    .transition-el-2
+      transition: transform .3s $animation-duration - .1s , opacity .3s $animation-duration - .1s, border $animation-delay
+    .transition-el-3
+      transition: transform .3s $animation-duration, opacity .3s $animation-duration, border $animation-delay
+    .transition-el-4
+      transition: transform .3s $animation-duration + .1s, opacity .3s $animation-duration + .1s, border $animation-delay
+    .transition-el-5
+      transition: transform .3s $animation-duration + .2s, opacity .3s $animation-duration + .2s, background-color $animation-delay
+    .opacity-el-1
+      transition: opacity .3s $animation-duration + .4s
+  &.animate-out
+    opacity: 1
+  +MQ(XL)
+    +position(absolute, 0 0 null null)
+    background-color: transparent
+    transform: translateX(0) translateY(100%)
+    &.animate-in
+      transform: translateX(0) translateY(0)
+    &.animate-out
+      opacity: 0
+
+.stayintouch__controls
+  position: relative
+  margin-top: 3rem
+  padding: 0 3rem
+  +MQ(M)
+    padding: 0 5rem
+  +MQ(XXL)
+    margin-top: 4rem
+    padding: 0 6rem
+
+.stayintouch__content
+  position: relative
+  padding: 6rem 0
+  max-width: 700px
+  .content-block
+    position: relative
+    padding: 0 3rem
+    margin-bottom: 6rem
+    &:last-of-type
+      margin-bottom: 0
+    &.margin-bottom-s
+      margin-bottom: 3.8rem
+    &.grid-block
+      padding: 0 calc(3rem - 15px)
+  +MQ(M)
+    .content-block
+      padding: 0 5rem
+      &.grid-block
+        padding: 0 calc(5rem - 15px)
+  +MQ(XL)
+    max-width: none
+  +MQ(XXL)
+    padding: 7rem 0
+    &.no-padding-bottom
+      padding: 7rem 0 0 0
+    .content-block
+      padding: 0 6rem
+      margin-bottom: 7rem
+      &.margin-bottom-s
+        margin-bottom: 4.8rem
+      &.grid-block
+        padding: 0 calc(6rem - 15px)

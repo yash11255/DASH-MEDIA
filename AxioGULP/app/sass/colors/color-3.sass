@@ -1,0 +1,438 @@
+/*! ------------------------------------------------
+   Project Name: Axio Coming Soon Template
+   Project Description: Axio - awesome coming soon template to kick-start your project
+   Tags: mix_design, axio, coming soon, under construction, template, coming soon page, html5, css3
+   Version: 4.0.2
+   Build Date: April 2017
+   Last Update: December 2024
+   This product is available exclusively on Themeforest
+   Author: mix_design
+   Author URI: https://themeforest.net/user/mix_design
+   File name: color-3.css
+   ------------------------------------------------
+
+   ------------------------------------------------
+   Table of Contents
+   ------------------------------------------------
+    1. Basic Color Options
+    2. Menu Colors
+    3. Intro Сopyright Colors
+    4. Main Section Aside Colors
+    5. Socials Colors
+    6. Buttons & Triggers Colors
+    7. Forms and Reply Groups Colors
+    8. PhotoSwipe Gallery Colors
+    9. Google Map Controls Colors
+    10. Notify Screen Colors
+    11. Stay-in-touch Screen Colors
+   ------------------------------------------------
+   Table of Contents End
+   ------------------------------------------------ */
+
+// Import Bourbon
+@import "bourbon"
+
+// Import Libs, Mixins and Variables
+@import "../partials/layout"
+@import "../partials/mixins"
+@import "../partials/variables"
+
+// Color Variables
+// Main Colors
+$accent-color: #f07ba5
+$base-color: #bb2649
+$white: #ffffff
+// Text Colors
+// Dark text
+$text-dark-bright: #070707
+$text-dark-medium: #444
+$text-dark-mute: tint(#969696, 40%)
+// Lidht text
+$text-light-bright: #ffffff
+$text-light: rgba(255,255,255,.8)
+$text-light-medium: rgba(255,255,255,.6)
+$text-light-mute: rgba(255,255,255,.4)
+// Text shadows
+$text-shadow-light: rgba(255,255,255,.6)
+// Backgrounds
+=bg-light
+  background-color: shade($white, 5%)
+=bg-medium
+  background-color: $accent-color
+=bg-dark
+  background-color: $base-color
+// Cover layers
+=cover-medium
+  background-color: rgba(#2d0535,.5)
+=cover-dark
+  background-color: rgba(#2d0535,.7)
+// Main pattern
+=background-pattern
+  //background-image: url('../../img/patterns/pattern-color-1.svg')
+  background-repeat: repeat
+  background-position: top left
+  //background-size: 14px 130px
+  .no-svg &
+    background:
+      //image: url('../../img/patterns/pattern-color-1.png')
+
+// blockquote backgrounds
+.blockquote__container
+  background-image: url("https://dummyimage.com/1400x900/3d3d3d/7a7a7a")
+/* ------------------------------------------------*/
+/* Basic Color Options Start
+/* ------------------------------------------------*/
+::selection
+  background-color: tint($accent-color, 30%)
+  color: $text-dark-bright
+  text-shadow: none
+
+::-webkit-scrollbar
+  background: shade($base-color, 16%)
+
+::-webkit-scrollbar-track
+  background-color: shade($base-color, 16%)
+
+::-webkit-scrollbar-thumb
+  background-color: $accent-color
+
+html
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
+
+body
+  color: $text-dark-medium
+  background-color: $white
+
+h1
+  color: $text-light-bright
+
+.headline__subtitle
+  color: $text-light-bright
+
+.headline__description
+  color: $text-light-bright
+
+h2
+  color: $text-dark-mute
+  &::after
+    background-color: tint($accent-color, 20%)
+
+h3
+  color: $text-dark-bright
+  &.light
+    color: $text-light-bright
+
+h4
+  color: $text-dark-bright
+  &.light
+    color: $text-light-bright
+
+a
+  color: $text-dark-bright
+  &.light
+    color: $text-light-bright
+  .no-touch &:hover
+    color: tint($base-color, 40%)
+    &.light
+      color: tint($accent-color, 40%)
+
+p
+  color: $text-dark-bright
+  &.light
+    color: $text-light-bright
+  &.copyright
+    color: $text-light-medium
+    a
+      color: $text-light-bright
+      .no-touch &:hover
+        color: $text-light-medium
+
+.aside__title
+  color: $text-light-bright
+.aside__text
+  color: $text-light-bright
+
+.popup__title
+  color: $text-dark-bright
+  &.light
+    color: $text-light-bright
+
+.popup__subtitle
+  color: $text-dark-medium
+  &.light
+    color: $text-light
+
+.clip
+  .words-wrapper
+    &::after
+      background-color: $accent-color
+
+.section-main
+  background-color: $accent-color
+
+.section-main__intro
+  background-color: $base-color
+
+.color-layer-medium
+  +cover-medium
+
+.color-layer-dark
+  +cover-dark
+
+.bg-light
+  +bg-light
+.bg-medium
+  +bg-medium
+.bg-dark
+  +bg-dark
+/* ------------------------------------------------*/
+/* Basic Color Options End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Menu Colors Start
+/* ------------------------------------------------*/
+.menu
+  background-color: shade($base-color, 10%)
+  +MQ(XL)
+    background-color: transparent
+
+.navigation
+  li
+    a
+      color: $text-light-bright
+    .no-touch &:hover
+      a
+        color: tint($accent-color, 10%)
+
+.menu-close
+  border: 2px solid $white
+  i
+    color: $text-light-bright
+/* ------------------------------------------------*/
+/* Menu Colors End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Intro Сopyright Colors Start
+/* ------------------------------------------------*/
+p
+  &.copyright
+    color: $text-light-medium
+    a
+      color: $text-light-bright
+      .no-touch &:hover
+        color: tint($accent-color, 40%)
+/* ------------------------------------------------*/
+/* Intro Сopyright Colors End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Main Section Aside Colors Start
+/* ------------------------------------------------*/
+.section-main__aside
+  background-color: $base-color
+  +background-pattern
+/* ------------------------------------------------*/
+/* Main Section Aside Colors End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Socials Colors Start
+/* ------------------------------------------------*/
+.socials
+  li
+    a
+      color: $text-light-bright
+      .no-touch &:hover
+        color: tint($accent-color, 40%)
+/* ------------------------------------------------*/
+/* Socials Colors End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Buttons & Triggers Colors Start
+/* ------------------------------------------------*/
+.button-solid-light
+  background-color: $accent-color
+  border: 2px solid $accent-color
+  color: $text-dark-bright
+  .no-touch &:hover
+    background-color: transparent
+    color: $text-light-bright
+    border: 2px solid $white
+
+.button-solid-dark
+  background-color: tint($base-color, 5%)
+  border: 2px solid tint($base-color, 5%)
+  color: $text-light-bright
+  .no-touch &:hover
+    background-color: transparent
+    border: 2px solid tint($base-color, 5%)
+    color: $text-dark-bright
+
+.button-outline-light
+  background-color: transparent
+  color: $text-light-bright
+  border: 2px solid $white
+  .no-touch &:hover
+    background-color: $accent-color
+    border: 2px solid $accent-color
+    color: $text-dark-bright
+
+.button-outline-dark
+  background-color: transparent
+  border: 2px solid tint($text-dark-bright, 15%)
+  color: $text-dark-bright
+  .no-touch &:hover
+    background-color: tint($base-color, 5%)
+    border: 2px solid tint($base-color, 5%)
+    color: $text-light-bright
+/* ------------------------------------------------*/
+/* Buttons & Triggers Colors End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Forms and Reply Groups Colors Start
+/* ------------------------------------------------*/
+.form-dark
+  ::-webkit-input-placeholder
+    color: tint($text-dark-medium, 40%)
+
+  :-moz-placeholder
+    color: tint($text-dark-medium, 40%)
+
+  ::-moz-placeholder
+    color: tint($text-dark-medium, 40%)
+
+  :-ms-input-placeholder
+    color: tint($text-dark-medium, 40%)
+
+  input:focus:required:invalid,
+  textarea:focus:required:invalid
+    color: $text-dark-bright
+  input:required:valid,
+  textarea:required:valid
+    color: $text-dark-bright
+
+  input, textarea
+    border-bottom: 1px solid $text-dark-medium
+    color: $text-dark-bright
+    &:focus
+      border-bottom: 1px solid $accent-color
+
+  .inputs-description
+    color: $text-dark-medium
+
+.form-light
+  ::-webkit-input-placeholder
+    color: $text-light
+    font-weight: 400
+
+  :-moz-placeholder
+    color: $text-light
+    font-weight: 400
+
+  ::-moz-placeholder
+    color: $text-light
+    font-weight: 400
+
+  :-ms-input-placeholder
+    color: $text-light
+    font-weight: 400
+
+  input:focus:required:invalid,
+  textarea:focus:required:invalid
+    color: $text-light-bright
+  input:required:valid,
+  textarea:required:valid
+    color: $text-light-bright
+
+  input, textarea
+    border-bottom: 1px solid $text-light-bright
+    color: $text-light-bright
+    &:focus
+      border-bottom: 1px solid tint($accent-color, 10%)
+
+  .inputs-description
+    color: $text-light-medium
+
+.reply-group__icon
+  color: $accent-color
+  &.light
+    color: tint($accent-color, 10%)
+
+.reply-group__title
+  color: $text-dark-bright
+  &.light
+    color: $text-light-bright
+
+.reply-group__text
+  color: $text-dark-medium
+  &.light
+    color: $text-light
+/* ------------------------------------------------*/
+/* Forms and Reply Groups Colors End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* PhotoSwipe Gallery Colors Start
+/* ------------------------------------------------*/
+.my-gallery__item
+
+.my-gallery__descr
+  color: $text-dark-bright
+  &::after
+    background-color: $white
+
+.pswp__caption__center
+  h4
+    color: $text-light-bright
+    small
+      color: $text-light-bright
+  p
+    color: $text-light-bright
+
+.pswp__counter
+  color: $text-light-bright
+
+.pswp__bg
+  background: shade($base-color, 40%)
+
+.pswp__button--close
+  background-color: $accent-color
+/* ------------------------------------------------*/
+/* PhotoSwipe Gallery Colors End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Google Map Controls Colors Start
+/* ------------------------------------------------*/
+#zoom-in, #zoom-out
+  background-color: $accent-color
+  color: $text-dark-bright
+  .no-touch &:hover
+    background-color: tint($accent-color, 30%)
+/* ------------------------------------------------*/
+/* Google Map Controls Colors End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Notify Screen Colors Start
+/* ------------------------------------------------*/
+.notify
+  background-color: shade($base-color, 10%)
+/* ------------------------------------------------*/
+/* Notify Screen Colors End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Stay-in-touch Screen Colors Start
+/* ------------------------------------------------*/
+.stayintouch
+  background-color: shade($base-color, 10%)
+  +MQ(XL)
+    background-color: transparent
+/* ------------------------------------------------*/
+/* Stay-in-touch Screen Colors End
+/* ------------------------------------------------*/

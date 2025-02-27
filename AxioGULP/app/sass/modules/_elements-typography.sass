@@ -1,0 +1,188 @@
+h1
+  font: normal 700 4rem/1.2 $default-font
+  letter-spacing: -.1rem
+  color: $light-color
+  +MQ(M)
+    font-size: 9rem
+  +MQ(XXL)
+    font-size: 13rem
+
+.headline__subtitle
+  font: normal 400 1.6rem/1.2 $default-font
+  color: $light-color
+  padding-left: .2rem
+  +MQ(M)
+    font-size: 2.4rem
+    margin-bottom: -.6rem
+  +MQ(XL)
+    margin-top: 2rem
+  +MQ(XXL)
+    font-size: 3rem
+
+.headline__description
+  font: normal 400 1.4rem/1.7 $default-font
+  color: $light-color
+  padding-left: .2rem
+  max-width: 500px
+  margin-top: 2.4rem
+  +MQ(M)
+    font-size: 1.6rem
+    margin-top: 1.6rem
+  +MQ(XXL)
+    max-width: 610px
+    font-size: 2rem
+
+.headline__btnholder
+  margin-top: 3.6rem
+  +MQ(M)
+    margin-top: 3.8rem
+  +MQ(XXL)
+    margin-top: 4.6rem
+
+h2
+  position: relative
+  display: inline-block
+  font: normal 700 5rem/1 $default-font
+  letter-spacing: -.14rem
+  color: tint($dark-color, 60%)
+  padding-bottom: .4rem
+  &::after
+    content: ''
+    display: block
+    +position(absolute, null null 0 -3rem)
+    width: calc(100% + 3rem)
+    height: 6px
+    background-color: tint($dark-color, 30%)
+    border-radius: 1px
+  +MQ(M)
+    font-size: 8.6rem
+    &::after
+      left: -5rem
+      width: calc(100% + 5rem)
+  +MQ(XXL)
+    font-size: 12rem
+    &::after
+      left: -6rem
+      width: calc(100% + 6rem)
+
+h3
+  font: normal 700 1.6rem/1.4 $default-font
+  text-transform: uppercase
+  color: shade($dark-color, 40%)
+  margin-bottom: 1.8rem
+  &.light
+    color: $light-color
+  +MQ(XXL)
+    font-size: 2rem
+
+h4
+  font: normal 700 1.5rem/1.2 $default-font
+  text-transform: uppercase
+  letter-spacing: 0.02em
+  color: $dark-color
+  &.light
+    color: $light-color
+  small
+    display: block
+    margin-top: .2rem
+    font: italic 400 1.3rem/1.2 $default-font
+    text-transform: none
+  +MQ(XXL)
+    font-size: 1.9rem
+    small
+      font-size: 1.4rem
+
+p
+  font: normal 400 1.6rem/1.7 $default-font
+  color: $dark-color
+  &.light
+    color: $light-color
+  &.copyright
+    font: normal 500 1.1rem/1 $default-font
+    text-transform: uppercase
+    color: rgba($light-color, .6)
+    letter-spacing: 0.03em
+    a
+      color: $light-color
+      transition: color .3s ease-in-out
+      .no-touch &:hover
+        color: rgba($light-color, .6)
+
+.inner__text
+  font: normal 500 1.6rem/1.7 $default-font
+  margin-top: 3rem
+  padding-left: 2px
+  span
+    font-weight: 700
+    white-space: nowrap
+  +MQ(XXL)
+    font-size: 2rem
+
+.aside__title
+  font: normal 700 2rem/1.4 $default-font
+  color: $light-color
+  max-width: 500px
+  margin-bottom: 2.4rem
+  +MQ(XXL)
+    font-size: 2.6rem
+
+.aside__text
+  font: normal 400 1.4rem/1.7 $default-font
+  color: $light-color
+  max-width: 500px
+  margin-bottom: 3.2rem
+  +MQ(XXL)
+    font-size: 1.6rem
+    margin-bottom: 3.4rem
+
+blockquote
+  position: relative
+  text-align: center
+  i
+    display: block
+    font-size: 3rem
+    line-height: 1.2
+    color: $dark-color
+    margin: 0 auto 3.6rem
+    &.light
+      color: $light-color
+  p
+    font: italic 500 2rem/1.4 $default-font
+    color: shade($dark-color, 40%)
+    margin-bottom: 3rem
+    &.light
+      color: $light-color
+  cite
+    font: normal 400 1.4rem/1.2 $default-font
+    color: rgba($dark-color, .8)
+    &.light
+      color: rgba($light-color, .8)
+    span
+      display: block
+  +MQ(M)
+    p
+      max-width: 560px
+      margin: 0 auto 3rem
+  +MQ(XXL)
+    p
+      max-width: 760px
+      font-size: 3rem
+
+.popup__title
+  font: normal 700 2.6rem/1.4 $default-font
+  color: $dark-color
+  margin-bottom: 2rem
+  &.light
+    color: $light-color
+  +MQ(XL)
+    font-size: 2rem
+  +MQ(XXL)
+    font-size: 2.6rem
+
+.popup__subtitle
+  font: normal 400 1.6rem/1.7 $default-font
+  color: $dark-color
+  &.light
+    color: $light-color
+  +MQ(XXL)
+    font-size: 1.6rem

@@ -1,0 +1,111 @@
+*, *::before, *::after
+  box-sizing: border-box
+
+button:active, button:focus
+  outline: none !important
+
+button::-moz-focus-inner
+  border: 0 !important
+
+input::-moz-focus-inner
+  border: 0 !important
+
+::selection
+  background-color: tint($dark-color, 60%)
+  color: $light-color
+  text-shadow: none
+
+::-webkit-scrollbar
+  display: none
+  width: 6px
+  +MQ(M)
+    display: block
+
+::-webkit-scrollbar-track
+  border-radius: 20px
+
+::-webkit-scrollbar-thumb
+  border-radius: 10px
+
+html
+  font-family: sans-serif
+  font-size: 62.5%
+  +font-smoothing
+  //overflow: hidden
+
+html,
+body
+  width: 100%
+  height: 100%
+  overflow: hidden
+
+body
+  position: relative
+  min-width: 320px
+  overflow-x: hidden !important
+  font: normal 400 1.4rem/1.7 $default-font
+  background-color: $light-color
+  color: $dark-color
+  //+MQ(XL)
+    overflow: hidden
+
+section
+  position: relative
+  min-width: 320px
+
+a
+  text-decoration: none
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
+  outline: 0
+  color: $dark-color
+  transition: color .3s ease-in-out
+  &.light
+    color: $light-color
+  .no-touch &:hover
+    color: tint($dark-color, 30%)
+    &.light
+      color: shade($light-color, 30%)
+
+a:hover,
+a:active,
+a:focus
+  outline: 0
+
+img
+  display: block
+  width: 100%
+  height: auto
+
+.overflow-hidden
+  overflow: hidden !important
+
+.fullheight
+  position: static
+  height: auto
+  +MQ(XL)
+    position: relative
+    height: 100%
+
+.fullheight-mobile
+  position: relative
+  height: 100%
+
+.color-layer
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+
+.color-layer-medium
+  +cover-medium
+
+.color-layer-dark
+  +cover-dark
+
+.bg-light
+  +bg-light
+.bg-medium
+  +bg-medium
+.bg-dark
+  +bg-dark
